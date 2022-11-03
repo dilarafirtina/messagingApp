@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-const primaryColor = Color(0xFF25d366);
+const primaryColor = Color(0xFF128C7E);
 const secondaryColor = Color(0xFF075e54);
 const textBoxMe = Color(0xFFdcf8c6);
 const messageBackground = Color(0xFFece5dd);
@@ -12,8 +12,8 @@ const errorColor = Color(0xFFF03738);
 
 const defaultPadding = 16.0;
 
-const logoDarkTheme = "icons/Only_logo_dark_theme.svg";
-const logoLightTheme = "icons/Only_logo_light_theme.svg";
+const logoDarkTheme = "icons/logo.svg";
+const logoLightTheme = "icons/logo.svg";
 
 const requiredField = "This field is required";
 const invalidEmail = "Enter a valid email address";
@@ -33,6 +33,6 @@ const InputDecoration otpInputDecoration = InputDecoration(
   hintText: "0",
 );
 
-enum MenuState { chat, services, reservations, offers }
+enum MenuState { queue, accepted, resolved }
 
 const String logoImage = "https://yasmak.opex.app/images/logo.png";

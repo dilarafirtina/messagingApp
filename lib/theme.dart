@@ -7,10 +7,10 @@ ThemeData lightThemeData(BuildContext context) {
     primaryColor: primaryColor,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme,
-    iconTheme: IconThemeData(color: contentColorLightTheme),
+    iconTheme: const IconThemeData(color: contentColorLightTheme),
     textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
         .apply(bodyColor: contentColorLightTheme),
-    colorScheme: ColorScheme.light(
+    colorScheme: const ColorScheme.light(
       primary: primaryColor,
       secondary: secondaryColor,
       error: errorColor,
@@ -19,7 +19,7 @@ ThemeData lightThemeData(BuildContext context) {
       backgroundColor: Colors.white,
       selectedItemColor: contentColorLightTheme.withOpacity(0.7),
       unselectedItemColor: contentColorLightTheme.withOpacity(0.32),
-      selectedIconTheme: IconThemeData(color: primaryColor),
+      selectedIconTheme: const IconThemeData(color: primaryColor),
       showUnselectedLabels: true,
     ),
     inputDecorationTheme: inputDecorationTheme.copyWith(

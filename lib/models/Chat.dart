@@ -1,70 +1,112 @@
 class Chat {
-  final String name, lastMessage, image, time;
+  final String name, lastMessage, roomNumber, time, status;
   final bool isActive;
 
   Chat({
     this.name = '',
     this.lastMessage = '',
-    this.image = '',
+    this.roomNumber = '',
     this.time = '',
+    this.status = 'queue',
     this.isActive = false,
   });
 }
 
-List chatsData = [
-  Chat(
-    name: "Jenny Wilson",
-    lastMessage: "Lorem ipsum dolor...",
-    image: "images/user.png",
-    time: "3m ago",
-    isActive: false,
-  ),
-  Chat(
-    name: "Esther Howard",
-    lastMessage: "Lorem ipsum dolor...",
-    image: "images/user_2.png",
-    time: "8m ago",
-    isActive: true,
-  ),
-  Chat(
-    name: "Ralph Edwards",
-    lastMessage: "Lorem ipsum dolor...",
-    image: "images/user_3.png",
-    time: "5d ago",
-    isActive: false,
-  ),
+List queueData = [
   Chat(
     name: "Jacob Jones",
     lastMessage: "Lorem ipsum dolor...",
-    image: "images/user_4.png",
+    roomNumber: "123",
     time: "5d ago",
     isActive: true,
   ),
   Chat(
     name: "Albert Flores",
     lastMessage: "Thanks",
-    image: "images/user_5.png",
+    roomNumber: "1234",
     time: "6d ago",
     isActive: false,
   ),
   Chat(
     name: "Jenny Wilson",
     lastMessage: "Lorem ipsum dolor...",
-    image: "images/user.png",
+    roomNumber: "432",
     time: "3m ago",
     isActive: false,
   ),
   Chat(
     name: "Esther Howard",
     lastMessage: "Lorem ipsum dolor...",
-    image: "images/user_2.png",
+    roomNumber: "5000",
     time: "8m ago",
     isActive: true,
   ),
   Chat(
     name: "Ralph Edwards",
     lastMessage: "Do you have update...",
-    image: "images/user_3.png",
+    roomNumber: "7000",
+    time: "5d ago",
+    isActive: false,
+  ),
+];
+
+List acceptedData = [
+  Chat(
+    name: "Jenny Wilson",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "2000",
+    time: "3m ago",
+    isActive: false,
+  ),
+  Chat(
+    name: "Esther Howard",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "2003",
+    time: "8m ago",
+    isActive: true,
+  ),
+  Chat(
+    name: "Ralph Edwards",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "2244",
+    time: "5d ago",
+    isActive: false,
+  ),
+  Chat(
+    name: "Jenny Wilson",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "7777",
+    time: "3m ago",
+    isActive: false,
+  ),
+  Chat(
+    name: "Esther Howard",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "1229",
+    time: "8m ago",
+    isActive: true,
+  ),
+];
+
+List resolvedData = [
+  Chat(
+    name: "Jenny Wilson",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "1200",
+    time: "3m ago",
+    isActive: false,
+  ),
+  Chat(
+    name: "Esther Howard",
+    lastMessage: "Lorem ipsum dolor...",
+    roomNumber: "1201",
+    time: "8m ago",
+    isActive: true,
+  ),
+  Chat(
+    name: "Ralph Edwards",
+    lastMessage: "Do you have update...",
+    roomNumber: "1202",
     time: "5d ago",
     isActive: false,
   ),

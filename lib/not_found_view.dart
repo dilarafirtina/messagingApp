@@ -16,7 +16,7 @@ class UnknownView extends StatelessWidget {
         height: 64,
         width: 64,
         child: ElevatedButton(
-          onPressed: () => Get.toNamed(AppRoutes.main),
+          onPressed: () => Get.toNamed(AppRoutes.home),
           style: ElevatedButton.styleFrom(
               shape: const CircleBorder(), backgroundColor: primaryColor),
           child: Icon(Icons.arrow_back, color: Colors.grey.shade50),

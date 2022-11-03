@@ -1,6 +1,6 @@
 import 'package:cht1/not_found_view.dart';
 import 'package:cht1/routes.dart';
-import 'package:cht1/screens/welcome/splash_screen.dart';
+import 'package:cht1/pages/splash/splash_view.dart';
 import 'package:cht1/theme.dart';
 import 'package:cht1/utils/app_routes.dart';
 import 'package:flutter/material.dart';
