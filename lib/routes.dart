@@ -1,7 +1,5 @@
 import 'package:cht1/not_found_view.dart';
-import 'package:cht1/pages/chats/chat.dart';
 import 'package:cht1/pages/home/home_view.dart';
-import 'package:cht1/pages/chats/chats_view.dart';
 import 'package:cht1/pages/splash/splash_view.dart';
 import 'package:cht1/utils/app_routes.dart';
 import 'package:get/get.dart';
@@ -12,7 +10,7 @@ class Routes {
   static final routes = [
     GetPage(
       name: AppRoutes.splash,
-      page: () => SplashScreen(),
+      page: () => SplashView(),
     ),
     GetPage(
       name: AppRoutes.notFoundPage,

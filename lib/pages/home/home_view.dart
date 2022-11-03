@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
                     flex: 2,
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height,
-                        child: MessagesScreen()),
+                        child: MessagesView()),
                   ),
                   const SizedBox(
                     width: 20,
@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height,
-                        child: ProfileScreen()),
+                        child: const ProfileView()),
                   ),
                 ],
               ),

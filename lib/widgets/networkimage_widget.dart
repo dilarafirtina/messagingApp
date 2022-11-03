@@ -11,11 +11,11 @@ Widget cachedNetworkImage(String imageUrl, BoxFit? fitValue, String heroTag) {
         fitValue: fitValue ?? BoxFit.contain),
     placeholder: (context, url) => ErrorImage(
       heroTag: heroTag,
-      imageProvider: const AssetImage('assets/images/logo.png'),
+      imageProvider: const AssetImage('images/logo.png'),
     ),
     errorWidget: (context, url, error) => ErrorImage(
       heroTag: heroTag,
-      imageProvider: const AssetImage('assets/images/logo.png'),
+      imageProvider: const AssetImage('images/logo.png'),
     ),
   );
 }

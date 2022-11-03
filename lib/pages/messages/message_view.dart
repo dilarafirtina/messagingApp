@@ -1,11 +1,10 @@
 import 'package:cht1/constants.dart';
 import 'package:cht1/pages/action_buttons/actions_view.dart';
-import 'package:cht1/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-class MessagesScreen extends StatelessWidget {
+class MessagesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

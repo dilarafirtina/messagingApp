@@ -5,8 +5,8 @@ import 'package:cht1/pages/profile/interview_info.dart';
 import 'package:cht1/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

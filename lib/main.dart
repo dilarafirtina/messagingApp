@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.INITIAL,
       unknownRoute: GetPage(
           name: AppRoutes.notFoundPage, page: () => const UnknownView()),
-      home: SplashScreen(),
+      home: SplashView(),
     );
   }
 }
