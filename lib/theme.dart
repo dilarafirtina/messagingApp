@@ -22,8 +22,7 @@ ThemeData lightThemeData(BuildContext context) {
       selectedIconTheme: const IconThemeData(color: primaryColor),
       showUnselectedLabels: true,
     ),
-    inputDecorationTheme: inputDecorationTheme.copyWith(
-        fillColor: primaryColor.withOpacity(0.05)),
+    inputDecorationTheme: inputDecorationTheme.copyWith(fillColor: greyColor),
   );
 }
 
@@ -32,9 +31,9 @@ ThemeData darkThemeData(BuildContext context) {
     primaryColor: primaryColor,
     scaffoldBackgroundColor: contentColorLightTheme,
     appBarTheme: appBarTheme,
-    iconTheme: IconThemeData(color: contentColorDarkTheme),
+    iconTheme: IconThemeData(color: greyColor),
     textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-        .apply(bodyColor: contentColorDarkTheme),
+        .apply(bodyColor: greyColor),
     colorScheme: ColorScheme.dark().copyWith(
       primary: primaryColor,
       secondary: secondaryColor,
@@ -43,7 +42,7 @@ ThemeData darkThemeData(BuildContext context) {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: contentColorLightTheme,
       selectedItemColor: Colors.white70,
-      unselectedItemColor: contentColorDarkTheme.withOpacity(0.32),
+      unselectedItemColor: greyColor.withOpacity(0.32),
       selectedIconTheme: IconThemeData(color: primaryColor),
       showUnselectedLabels: true,
     ),
@@ -54,7 +53,7 @@ ThemeData darkThemeData(BuildContext context) {
 final appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
 final inputDecorationTheme = InputDecorationTheme(
   filled: true,
-  fillColor: contentColorDarkTheme.withOpacity(0.08),
+  fillColor: greyColor.withOpacity(0.08),
   contentPadding: EdgeInsets.symmetric(
       horizontal: defaultPadding * 1.5, vertical: defaultPadding),
   border: OutlineInputBorder(

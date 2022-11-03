@@ -1,3 +1,4 @@
+import 'package:cht1/constants.dart';
 import 'package:cht1/pages/chats/chats_view.dart';
 import 'package:cht1/pages/messages/message_view.dart';
 import 'package:cht1/pages/profile/profile_view.dart';
@@ -34,9 +35,6 @@ class Home extends StatelessWidget {
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height,
                         child: MessagesView()),
-                  ),
-                  const SizedBox(
-                    width: 20,
                   ),
                   Expanded(
                     child: SizedBox(

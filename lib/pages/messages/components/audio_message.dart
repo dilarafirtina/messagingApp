@@ -11,19 +11,19 @@ class AudioMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.55,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: defaultPadding * 0.75,
-        vertical: defaultPadding / 2.5,
+        vertical: defaultPadding,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: primaryColor.withOpacity(message!.isSender ? 1 : 0.1),
+        color: message!.isSender ? textBoxMe : Colors.white,
       ),
       child: Row(
         children: [
           Icon(
             Icons.play_arrow,
-            color: message!.isSender ? Colors.white : primaryColor,
+            color: Colors.grey.shade500,
           ),
           Expanded(
             child: Padding(
@@ -36,9 +36,7 @@ class AudioMessage extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     height: 2,
-                    color: message!.isSender
-                        ? Colors.white
-                        : primaryColor.withOpacity(0.4),
+                    color: Colors.grey.shade500,
                   ),
                   Positioned(
                     left: 0,
@@ -46,7 +44,7 @@ class AudioMessage extends StatelessWidget {
                       height: 8,
                       width: 8,
                       decoration: BoxDecoration(
-                        color: message!.isSender ? Colors.white : primaryColor,
+                        color: Colors.grey.shade500,
                         shape: BoxShape.circle,
                       ),
                     ),

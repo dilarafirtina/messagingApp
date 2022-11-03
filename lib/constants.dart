@@ -4,9 +4,10 @@ import 'package:form_field_validator/form_field_validator.dart';
 const primaryColor = Color(0xFF128C7E);
 const secondaryColor = Color(0xFF075e54);
 const textBoxMe = Color(0xFFdcf8c6);
+const blueColor = Color(0xFF34B7F1);
 const messageBackground = Color(0xFFece5dd);
 const contentColorLightTheme = Color.fromRGBO(29, 29, 53, 1);
-const contentColorDarkTheme = Color(0xFFF5FCF9);
+const greyColor = Color(0xFFf9f9f9);
 const warninngColor = Color(0xFFF3BB1C);
 const errorColor = Color(0xFFF03738);
 

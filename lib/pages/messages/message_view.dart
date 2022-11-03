@@ -1,5 +1,5 @@
 import 'package:cht1/constants.dart';
-import 'package:cht1/pages/action_buttons/actions_view.dart';
+import 'package:cht1/pages/action_buttons/actions_menu.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
@@ -47,9 +47,9 @@ class MessagesView extends StatelessWidget {
           TextButton(
               child: Text("Show Actions",
                   style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold)),
+                        color: Colors.white,
+                        fontSize: 16,
+                      )),
               onPressed: () => {
                     showDialog<void>(
                         context: context,

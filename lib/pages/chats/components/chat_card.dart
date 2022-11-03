@@ -27,8 +27,8 @@ class ChatCard extends StatelessWidget {
               width: 50,
               height: 50,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: primaryColor.withOpacity(0.05),
+              decoration: const BoxDecoration(
+                color: greyColor,
                 shape: BoxShape.circle,
               ),
               child: Column(

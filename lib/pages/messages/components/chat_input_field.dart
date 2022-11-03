@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../constants.dart';
 import 'message_attachment.dart';
@@ -43,8 +44,8 @@ class _ChatInputFieldState extends State<ChatInputField> {
             ),
             child: Row(
               children: [
-                Icon(Icons.mic, color: primaryColor),
-                SizedBox(width: defaultPadding),
+                const Icon(Icons.add, color: Colors.grey),
+                const SizedBox(width: defaultPadding),
                 Expanded(
                   child: Row(
                     children: [

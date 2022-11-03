@@ -17,18 +17,10 @@ class ProfileView extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Text(
           "Guest Info",
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline6!.copyWith(fontSize: 16),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.menu,
-              color: primaryColor,
-            ),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          )
+          ElevatedButton(onPressed: () => {}, child: Text("Merge Guest"))
         ],
       ),
       body: SafeArea(
