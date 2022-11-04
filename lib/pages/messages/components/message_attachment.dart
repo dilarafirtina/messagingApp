@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 
 class MessageAttachment extends StatelessWidget {
@@ -62,8 +61,8 @@ class MessageAttachmentCard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(defaultPadding * 0.75),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(defaultPadding * 0.75),
+              decoration: const BoxDecoration(
                 color: primaryColor,
                 shape: BoxShape.circle,
               ),

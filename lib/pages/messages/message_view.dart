@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'components/body.dart';
 
 class MessagesView extends StatelessWidget {
+  bool timeLimitExceeded = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,12 +45,42 @@ class MessagesView extends StatelessWidget {
           ],
         ),
         actions: [
+          Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: greyColor,
+                  shape: BoxShape.rectangle,
+                  border: Border.all(color: Colors.grey.shade100, width: 1)),
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                children: [
+                  Icon(timeLimitExceeded ? Icons.lock_clock : Icons.alarm,
+                      color: timeLimitExceeded
+                          ? Colors.red.shade600
+                          : Colors.green.shade600),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: const [
+                      Text(
+                        "Remaining Time",
+                        style: TextStyle(
+                            color: Colors.black87, fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        "Yesterday",
+                        style: TextStyle(color: Colors.black87),
+                      )
+                    ],
+                  )
+                ],
+              )),
           TextButton(
-              child: Text("Show Actions",
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        color: Colors.white,
-                        fontSize: 16,
-                      )),
+              child: const Icon(
+                Icons.more_vert,
+                color: Colors.white,
+              ),
               onPressed: () => {
                     showDialog<void>(
                         context: context,

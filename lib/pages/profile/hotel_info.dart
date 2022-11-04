@@ -23,7 +23,7 @@ RxList data = completed.obs;
 Widget hotelInfo(BuildContext context) {
   return Column(children: [
     Container(
-      padding: const EdgeInsets.all(defaultPadding),
+      padding: const EdgeInsets.all(defaultPadding / 2),
       color: primaryColor,
       child: Obx(
         () => Row(
@@ -32,7 +32,6 @@ Widget hotelInfo(BuildContext context) {
               press: () {
                 data.value = completed;
                 isFilled.value = !isFilled.value;
-                print(data);
               },
               text: "Last Stay",
               isFilled: !isFilled.value,
@@ -42,7 +41,6 @@ Widget hotelInfo(BuildContext context) {
               press: () {
                 data.value = upcoming;
                 isFilled.value = !isFilled.value;
-                print(data);
               },
               text: "Next Stay",
               isFilled: isFilled.value,
@@ -57,7 +55,7 @@ Widget hotelInfo(BuildContext context) {
           itemCount: data.length,
           itemBuilder: (context, index) => Container(
             padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding, vertical: defaultPadding / 3),
+                horizontal: defaultPadding, vertical: defaultPadding / 4),
             child: Column(
               children: [
                 Info(

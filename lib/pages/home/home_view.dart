@@ -27,9 +27,6 @@ class Home extends StatelessWidget {
                       child: ChatsView(),
                     ),
                   ),
-                  const SizedBox(
-                    width: 20,
-                  ),
                   Expanded(
                     flex: 2,
                     child: SizedBox(

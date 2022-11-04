@@ -1,6 +1,5 @@
 import 'package:cht1/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'components/info.dart';
 
 Widget guestInfo(BuildContext context) {
@@ -24,31 +23,6 @@ Widget guestInfo(BuildContext context) {
           ),
         ),
       ),
-      // Container(
-      //   decoration: BoxDecoration(
-      //       color: greyColor,
-      //       shape: BoxShape.rectangle,
-      //       border: Border.all(color: Colors.grey.shade100, width: 1)),
-      //   padding: const EdgeInsets.all(8),
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     children: [
-      //       Text(
-      //         "Communication Permission",
-      //         style: TextStyle(
-      //           color: Theme.of(context)
-      //               .textTheme
-      //               .bodyText1!
-      //               .color!
-      //               .withOpacity(0.8),
-      //         ),
-      //       ),
-      //       const Icon(
-      //         IconlyBold.tick_square,
-      //       )
-      //     ],
-      //   ),
-      // ),
       Container(
           padding: const EdgeInsets.only(
             left: defaultPadding,

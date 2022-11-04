@@ -14,7 +14,7 @@ class Info extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2),
+      padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2.5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

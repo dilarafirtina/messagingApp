@@ -1,8 +1,6 @@
-import 'package:cht1/constants.dart';
 import 'package:cht1/pages/profile/guest_info.dart';
 import 'package:cht1/pages/profile/hotel_info.dart';
 import 'package:cht1/pages/profile/interview_info.dart';
-import 'package:cht1/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatelessWidget {
@@ -10,7 +8,6 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: defaultDrawer(),
       appBar: AppBar(
         elevation: 3,
         backgroundColor: Colors.white,
