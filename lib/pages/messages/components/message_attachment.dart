@@ -1,43 +1,35 @@
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
-class MessageAttachment extends StatelessWidget {
-  const MessageAttachment({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      color: Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.08),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          MessageAttachmentCard(
-            iconData: Icons.insert_drive_file,
-            title: "Document",
-            press: () {},
-          ),
-          MessageAttachmentCard(
-            iconData: Icons.image,
-            title: "Gallery",
-            press: () {},
-          ),
-          MessageAttachmentCard(
-            iconData: Icons.headset,
-            title: "Audio",
-            press: () {},
-          ),
-          MessageAttachmentCard(
-            iconData: Icons.videocam,
-            title: "Video",
-            press: () {},
-          ),
-        ],
-      ),
-    );
-  }
+Widget attachmentBox() {
+  return Container(
+    width: double.infinity,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        MessageAttachmentCard(
+          iconData: Icons.insert_drive_file,
+          title: "Document",
+          press: () {},
+        ),
+        MessageAttachmentCard(
+          iconData: Icons.image,
+          title: "Gallery",
+          press: () {},
+        ),
+        MessageAttachmentCard(
+          iconData: Icons.headset,
+          title: "Audio",
+          press: () {},
+        ),
+        MessageAttachmentCard(
+          iconData: Icons.videocam,
+          title: "Video",
+          press: () {},
+        ),
+      ],
+    ),
+  );
 }
 
 class MessageAttachmentCard extends StatelessWidget {

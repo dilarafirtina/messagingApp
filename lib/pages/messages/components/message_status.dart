@@ -22,7 +22,7 @@ class MessageStatusDot extends StatelessWidget {
     }
 
     return Container(
-        margin: EdgeInsets.only(left: 10),
+        margin: EdgeInsets.only(left: 5),
         height: 18,
         width: 18,
         child: status == MessageStatus.not_sent

@@ -38,7 +38,7 @@ Widget receiverTextMessage(BuildContext context, ChatMessage message) {
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(message.text,
@@ -46,19 +46,17 @@ Widget receiverTextMessage(BuildContext context, ChatMessage message) {
                         style: const TextStyle(
                             color: Colors.black87, fontSize: 14)),
                     Container(
-                      width: 90,
+                      width: 40,
                       padding: const EdgeInsets.only(top: 5),
                       alignment: Alignment.bottomRight,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
                             message.time,
                             style: const TextStyle(
-                                color: Colors.grey, fontSize: 12),
+                                color: Colors.grey, fontSize: 10),
                           ),
-                          if (message.isSender)
-                            MessageStatusDot(status: message.messageStatus)
                         ],
                       ),
                     )

@@ -11,6 +11,9 @@ Widget interviewInfo(BuildContext context) {
           "Last Interview Info",
           style: Theme.of(context).textTheme.bodyLarge,
         ),
+        SizedBox(
+          height: 10,
+        ),
         const Divider(height: defaultPadding),
         const Info(
           infoKey: "Date",

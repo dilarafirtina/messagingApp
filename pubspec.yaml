@@ -45,6 +45,7 @@ dependencies:
   cached_network_image: ^3.2.2
   modal_bottom_sheet: ^2.1.2
   video_player: ^2.4.7
+  syncfusion_flutter_datagrid: ^20.3.52
 
 dev_dependencies:
   flutter_test:

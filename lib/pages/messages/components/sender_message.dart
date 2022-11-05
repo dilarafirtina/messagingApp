@@ -47,10 +47,9 @@ Widget senderTextMessage(BuildContext context, ChatMessage message) {
                       children: [
                         Text(
                           message.time,
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                          style: TextStyle(color: Colors.grey, fontSize: 10),
                         ),
-                        if (message.isSender)
-                          MessageStatusDot(status: message.messageStatus)
+                        MessageStatusDot(status: message.messageStatus)
                       ],
                     ),
                   )

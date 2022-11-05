@@ -1,5 +1,6 @@
 import 'package:cht1/constants.dart';
 import 'package:cht1/pages/action_buttons/actions_menu.dart';
+import 'package:cht1/widgets/show_dialog.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
@@ -85,30 +86,10 @@ class MessagesView extends StatelessWidget {
                     showDialog<void>(
                         context: context,
                         builder: (BuildContext context) {
-                          return AlertDialog(
-                              titlePadding: EdgeInsets.all(0),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                              ),
-                              title: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(20.0),
-                                      topRight: Radius.circular(20.0)),
-                                  color: primaryColor,
-                                ),
-                                width: double.infinity,
-                                alignment: Alignment.center,
-                                padding: const EdgeInsets.all(defaultPadding),
-                                child: Text(
-                                  "Choose Action",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge!
-                                      .copyWith(color: Colors.white),
-                                ),
-                              ),
-                              content: Container(
+                          return customAlertDialog(
+                              context,
+                              "Choose Action",
+                              SizedBox(
                                   width: 400,
                                   height: 500,
                                   child: actionsMenu(context)));

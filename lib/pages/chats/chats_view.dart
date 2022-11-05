@@ -23,6 +23,7 @@ class ChatsView extends StatelessWidget {
         automaticallyImplyLeading: false,
         flexibleSpace: Obx(
           () => BottomNavigationBar(
+            elevation: 1.0,
             type: BottomNavigationBarType.fixed,
             currentIndex: pageIndex.value,
             onTap: (index) {

@@ -23,7 +23,7 @@ RxList data = completed.obs;
 Widget hotelInfo(BuildContext context) {
   return Column(children: [
     Container(
-      padding: const EdgeInsets.all(defaultPadding / 2),
+      padding: const EdgeInsets.all(defaultPadding),
       color: primaryColor,
       child: Obx(
         () => Row(

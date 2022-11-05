@@ -1,26 +1,13 @@
+import 'package:cht1/pages/action_buttons/actions_menu.dart';
+import 'package:cht1/pages/messages/components/note_datatable.dart';
+import 'package:cht1/pages/messages/components/message_attachment.dart';
+import 'package:cht1/widgets/show_dialog.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
-
 import '../../../constants.dart';
-import 'message_attachment.dart';
 
-class ChatInputField extends StatefulWidget {
-  const ChatInputField({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  _ChatInputFieldState createState() => _ChatInputFieldState();
-}
-
-class _ChatInputFieldState extends State<ChatInputField> {
-  bool _showAttachment = false;
-
-  void _updateAttachmentState() {
-    setState(() {
-      _showAttachment = !_showAttachment;
-    });
-  }
+class ChatInputField extends StatelessWidget {
+  const ChatInputField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +15,7 @@ class _ChatInputFieldState extends State<ChatInputField> {
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: defaultPadding,
               vertical: defaultPadding / 2,
             ),
@@ -44,48 +31,235 @@ class _ChatInputFieldState extends State<ChatInputField> {
             ),
             child: Row(
               children: [
-                const Icon(Icons.add, color: Colors.grey),
+                InkWell(
+                  onTap: () => {},
+                  child: Tooltip(
+                    message: 'Keyboard',
+                    child: Icon(
+                      Icons.keyboard_alt_outlined,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: defaultPadding),
+                InkWell(
+                  onTap: () => {},
+                  child: Tooltip(
+                    message: 'Add Queue',
+                    child: Icon(
+                      Icons.rotate_left,
+                      size: 28,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: defaultPadding),
+                InkWell(
+                  onTap: () => {},
+                  child: Tooltip(
+                    message: 'Resolved',
+                    child: Icon(
+                      Icons.check,
+                      size: 28,
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => {},
+                  child: PopupMenuButton<int>(
+                    tooltip: "Message Actions",
+                    icon: Icon(
+                      size: 28,
+                      Icons.add,
+                      color: Colors.grey.shade600,
+                    ),
+                    itemBuilder: (context) => [
+                      PopupMenuItem(
+                        value: 1,
+                        onTap: () => {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                    context,
+                                    "Interview Notes",
+                                    SizedBox(
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              2,
+                                      child: dataTable(context),
+                                    ),
+                                  );
+                                });
+                          }),
+                        },
+                        child: Row(
+                          children: const [
+                            Icon(Icons.note, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Add Notes",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 2,
+                        onTap: () => {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                    context,
+                                    "Guest Group Information",
+                                    SizedBox(
+                                      width: 400,
+                                      height: 500,
+                                      child: Container(),
+                                    ),
+                                  );
+                                });
+                          }),
+                        },
+                        child: Row(
+                          children: const [
+                            Icon(Icons.people, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Guest Group Information",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 3,
+                        onTap: () => {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                    context,
+                                    "Group Information",
+                                    SizedBox(
+                                      width: 400,
+                                      height: 500,
+                                      child: Container(),
+                                    ),
+                                  );
+                                });
+                          }),
+                        },
+                        child: Row(
+                          children: const [
+                            Icon(Icons.person_add, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Group Information",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: 4,
+                        onTap: () => {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                      context,
+                                      "Add Messages",
+                                      SizedBox(
+                                          width: 400,
+                                          height: 500,
+                                          child: Container()));
+                                });
+                          })
+                        },
+                        child: Row(
+                          children: const [
+                            Icon(Icons.message, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Add Messages",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        onTap: () => {
+                          WidgetsBinding.instance.addPostFrameCallback((_) {
+                            showDialog<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return customAlertDialog(
+                                      context,
+                                      "Add Attachment",
+                                      SizedBox(
+                                          width: 400,
+                                          height: 100,
+                                          child: attachmentBox()));
+                                });
+                          })
+                        },
+                        value: 5,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.attachment, color: Colors.white),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Attachments",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                    offset: Offset(0, 100),
+                    color: secondaryColor,
+                    elevation: 3,
+                  ),
+                ),
                 const SizedBox(width: defaultPadding),
                 Expanded(
                   child: Row(
                     children: [
-                      SizedBox(width: defaultPadding / 4),
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
-                              hintText: "Type message",
-                              suffixIcon: SizedBox(
-                                width: 65,
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: _updateAttachmentState,
-                                      child: Icon(
-                                        Icons.attach_file,
-                                        color: _showAttachment
-                                            ? primaryColor
-                                            : Theme.of(context)
-                                                .textTheme
-                                                .bodyText1!
-                                                .color!
-                                                .withOpacity(0.64),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: defaultPadding / 2),
-                                      child: Icon(
-                                        Icons.camera_alt_outlined,
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .bodyText1!
-                                            .color!
-                                            .withOpacity(0.64),
-                                      ),
-                                    ),
-                                  ],
+                            hintText: "Type message",
+                            suffixIcon: SizedBox(
+                              width: 65,
+                              child: InkWell(
+                                onTap: () => {},
+                                child: Tooltip(
+                                  message: 'Send',
+                                  child: Icon(
+                                    Icons.send_outlined,
+                                    color: Colors.grey.shade600,
+                                  ),
                                 ),
-                              )),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -94,7 +268,6 @@ class _ChatInputFieldState extends State<ChatInputField> {
               ],
             ),
           ),
-          if (_showAttachment) MessageAttachment(),
         ],
       ),
     );

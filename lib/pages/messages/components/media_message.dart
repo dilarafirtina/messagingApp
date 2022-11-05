@@ -12,13 +12,13 @@ Widget mediaMessage(BuildContext context, ChatMessage message) {
         alignment: Alignment.topLeft,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: defaultPadding),
+            margin: const EdgeInsets.only(bottom: defaultPadding),
             height: MediaQuery.of(context).size.width * 0.55,
             width: MediaQuery.of(context).size.width * 0.35,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               border: Border.all(color: textBoxMe, width: 3),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
             ),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),

@@ -5,7 +5,6 @@ import 'components/info.dart';
 Widget guestInfo(BuildContext context) {
   bool isAllowed = false;
   return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
         padding: const EdgeInsets.only(
@@ -31,9 +30,15 @@ Widget guestInfo(BuildContext context) {
           ),
           child: Column(
             children: [
+              SizedBox(
+                height: 10,
+              ),
               Text(
                 "Kristin Watson",
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              SizedBox(
+                height: 10,
               ),
               const Divider(height: defaultPadding),
               const Info(
