@@ -1,38 +1,39 @@
 import 'package:cht1/constants.dart';
+import 'package:cht1/pages/message_actions/widgets/list_popup.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widgets/show_dialog.dart';
+import '../../widgets/show_dialog.dart';
 
 List<Map<String, String>> noteInfo = [
   {
     "user": "Dilara Fırtına",
     "recordDate": "01.08.2020",
-    "text": "Lorem  ipsum dolar sin amet ipsum dolar sin amet"
+    "note": "Lorem  ipsum dolar sin amet ipsum dolar sin amet"
   },
   {
     "user": "Dilara Fırtına",
     "recordDate": "02.08.2019",
-    "text": "Lorem ipsum dolar sin amet"
+    "note": "Lorem ipsum dolar sin amet"
   },
   {
     "user": "Kübra Uygur",
     "recordDate": "03.08.2018",
-    "text": "Lorem ipsum dolar sin amet"
+    "note": "Lorem ipsum dolar sin amet"
   },
   {
     "user": "Kübra Uygur",
     "recordDate": "04.08.2020",
-    "text": "Lorem ipsum dolar sin amet"
+    "note": "Lorem ipsum dolar sin amet"
   },
   {
     "user": "Kübra Uygur",
     "recordDate": "05.08.2020",
-    "text": "Lorem ipsum dolar sin amet"
+    "note": "Lorem ipsum dolar sin amet"
   },
 ];
 
 @override
-Widget dataTable(BuildContext context) {
+Widget noteList(BuildContext context) {
   return SizedBox(
     width: 600,
     child: Column(
@@ -97,43 +98,66 @@ Widget dataTable(BuildContext context) {
                 )),
           ],
         ),
+        const SizedBox(height: defaultPadding),
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(
+                width: 100,
+                child: Text(
+                  "Record Date",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                width: defaultPadding,
+              ),
+              SizedBox(
+                width: 120,
+                child: Text(
+                  "Record User",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                width: defaultPadding * 1.2,
+              ),
+              Expanded(
+                  child: Text(
+                "Note",
+                maxLines: 4,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ))
+            ],
+          ),
+        ),
+        Divider(),
         Expanded(
           child: ListView.builder(
             padding: const EdgeInsets.all(8),
             itemCount: noteInfo.length,
             itemBuilder: (BuildContext context, int index) {
-              return NoteList(noteInfo[index]["recordDate"]!,
-                  noteInfo[index]["user"]!, noteInfo[index]["text"]!);
+              return ListPopup(
+                type: "note",
+                recordDate: noteInfo[index]["recordDate"]!,
+                recordUser: noteInfo[index]["user"]!,
+                note: noteInfo[index]["note"]!,
+              );
             },
           ),
         )
       ],
     ),
   );
-}
-
-Widget NoteList(String date, String user, String note) {
-  return Container(
-      padding: const EdgeInsets.all(defaultPadding / 3),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(date),
-              const SizedBox(
-                width: defaultPadding,
-              ),
-              Text(user),
-              const SizedBox(
-                width: defaultPadding,
-              ),
-              Text(note)
-            ],
-          ),
-          const Divider(
-            thickness: 1.5,
-          )
-        ],
-      ));
 }

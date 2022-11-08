@@ -53,11 +53,11 @@ ThemeData darkThemeData(BuildContext context) {
 final appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
 final inputDecorationTheme = InputDecorationTheme(
   filled: true,
-  fillColor: greyColor.withOpacity(0.08),
-  contentPadding: EdgeInsets.symmetric(
-      horizontal: defaultPadding * 1.5, vertical: defaultPadding),
-  border: OutlineInputBorder(
-    borderSide: BorderSide.none,
-    borderRadius: const BorderRadius.all(Radius.circular(50)),
-  ),
+  fillColor: greyColor.withOpacity(0.04),
+  // contentPadding: EdgeInsets.symmetric(
+  //     horizontal: defaultPadding * 1.5, vertical: defaultPadding),
+  // border: OutlineInputBorder(
+  //   borderSide: BorderSide.none,
+  //   borderRadius: const BorderRadius.all(Radius.circular(50)),
+  // ),
 );

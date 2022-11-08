@@ -1,8 +1,8 @@
-import 'package:cht1/pages/action_buttons/actions_menu.dart';
-import 'package:cht1/pages/messages/components/note_datatable.dart';
-import 'package:cht1/pages/messages/components/message_attachment.dart';
+import 'package:cht1/pages/message_actions/chat_note.dart';
+import 'package:cht1/pages/message_actions/group.dart';
+import 'package:cht1/pages/message_actions/guest_group.dart';
+import 'package:cht1/pages/message_actions/templates.dart';
 import 'package:cht1/widgets/show_dialog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
@@ -89,7 +89,7 @@ class ChatInputField extends StatelessWidget {
                                       height:
                                           MediaQuery.of(context).size.height /
                                               2,
-                                      child: dataTable(context),
+                                      child: noteList(context),
                                     ),
                                   );
                                 });
@@ -119,9 +119,10 @@ class ChatInputField extends StatelessWidget {
                                     context,
                                     "Guest Group Information",
                                     SizedBox(
-                                      width: 400,
-                                      height: 500,
-                                      child: Container(),
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              2,
+                                      child: guestGroupList(context),
                                     ),
                                   );
                                 });
@@ -151,9 +152,10 @@ class ChatInputField extends StatelessWidget {
                                     context,
                                     "Group Information",
                                     SizedBox(
-                                      width: 400,
-                                      height: 500,
-                                      child: Container(),
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              2,
+                                      child: groupList(context),
                                     ),
                                   );
                                 });
@@ -183,9 +185,15 @@ class ChatInputField extends StatelessWidget {
                                       context,
                                       "Add Messages",
                                       SizedBox(
-                                          width: 400,
-                                          height: 500,
-                                          child: Container()));
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                              1.6,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              1.6,
+                                          child: templates(context)));
                                 });
                           })
                         },
@@ -214,7 +222,7 @@ class ChatInputField extends StatelessWidget {
                                       SizedBox(
                                           width: 400,
                                           height: 100,
-                                          child: attachmentBox()));
+                                          child: Container()));
                                 });
                           })
                         },
@@ -245,6 +253,14 @@ class ChatInputField extends StatelessWidget {
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: defaultPadding * 1.5,
+                                vertical: defaultPadding),
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
+                            ),
                             hintText: "Type message",
                             suffixIcon: SizedBox(
                               width: 65,
