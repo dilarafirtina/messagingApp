@@ -1,5 +1,5 @@
 import 'package:cht1/widgets/filled_outline_button.dart';
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:cht1/pages/profile/components/info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +24,7 @@ Widget hotelInfo(BuildContext context) {
   return Column(children: [
     Container(
       padding: const EdgeInsets.all(defaultPadding),
-      color: primaryColor,
+      color: kPrimaryColor,
       child: Obx(
         () => Row(
           children: [

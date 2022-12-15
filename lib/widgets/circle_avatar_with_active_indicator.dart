@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../utils/configuration.dart';
 
 class CircleAvatarWithActiveIndicator extends StatelessWidget {
   const CircleAvatarWithActiveIndicator({
@@ -30,7 +30,7 @@ class CircleAvatarWithActiveIndicator extends StatelessWidget {
               height: 16,
               width: 16,
               decoration: BoxDecoration(
-                color: primaryColor,
+                color: kPrimaryColor,
                 shape: BoxShape.circle,
                 border: Border.all(
                     color: Theme.of(context).scaffoldBackgroundColor, width: 3),

@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:cht1/pages/chats/components/chat_card.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +32,7 @@ Widget chatList(List data) {
     ),
     floatingActionButton: FloatingActionButton(
       onPressed: () {},
-      backgroundColor: primaryColor,
+      backgroundColor: kPrimaryColor,
       child: const Icon(
         Icons.person_add_alt_1,
         color: Colors.white,

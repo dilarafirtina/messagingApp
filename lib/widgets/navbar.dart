@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../utils/configuration.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({
@@ -32,7 +32,7 @@ class NavBar extends StatelessWidget {
               icon: Icon(icon),
               padding: EdgeInsets.symmetric(vertical: 0),
               iconSize: 30,
-              color: isFilled ? primaryColor : Colors.grey.shade300,
+              color: isFilled ? kPrimaryColor : Colors.grey.shade300,
               onPressed: () => press,
             ),
             Text(

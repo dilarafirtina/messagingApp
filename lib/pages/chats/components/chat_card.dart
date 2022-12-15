@@ -1,8 +1,8 @@
-import 'package:cht1/models/Chat.dart';
+import 'package:cht1/models/chats.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/circle_avatar_with_active_indicator.dart';
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 
 class ChatCard extends StatelessWidget {
   const ChatCard({
@@ -36,7 +36,7 @@ class ChatCard extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.key,
-                    color: secondaryColor,
+                    color: kSecondaryColor,
                     size: 20,
                   ),
                   Text(

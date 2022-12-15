@@ -1,9 +1,10 @@
-import 'dart:js';
-
 import 'package:animations/animations.dart';
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'interactive_messages.dart';
+import 'template_message.dart';
 
 List<Widget> pageList = <Widget>[
   templateMessage(),
@@ -11,7 +12,12 @@ List<Widget> pageList = <Widget>[
   interviewTag()
 ];
 
-const List<String> agents = <String>['One', 'Two', 'Three', 'Four'];
+const List<String> agents = <String>[
+  'One',
+  'Dear {{1}}, This WhatsApp group, created with your consent and whose servers are set abroad, is only used for the services we will provide during your stay at Opex. Your contact information within the group will not be used for any reason other than this purpose. This group will be deleted after the purpose of the business ends. Correspondence will be kept in a separate and secure system for 3 years for possible disagreements. For detailed information about our policy regarding personal data, you can visit the website below: https://opex.app/privacy-policy.html Do you approve this chat for Opex services? Opex Guest Assistant',
+  'Three',
+  'Four'
+];
 String dropdownvalue = 'One';
 
 @override
@@ -55,270 +61,6 @@ Widget templates(BuildContext context) {
         );
       },
       child: Obx(() => pageList[pageIndex.value]),
-    ),
-  );
-}
-
-Widget templateMessage() {
-  return SingleChildScrollView(
-      child: Container(
-    height: 700,
-    padding: const EdgeInsets.all(defaultPadding),
-    decoration: BoxDecoration(color: Colors.white),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        const Text(
-          "Message Name",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        DropdownButton(
-          style: TextStyle(fontSize: 14),
-          value: dropdownvalue,
-          isExpanded: true,
-          onChanged: (value) {},
-          alignment: AlignmentDirectional.topEnd,
-          items: agents.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        const Text(
-          "Parameter Header",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        TextField(
-          decoration: InputDecoration(
-            suffixIcon: SizedBox(
-              width: 65,
-              child: InkWell(
-                onTap: () => {},
-                child: Tooltip(
-                  message: 'Show Headers',
-                  child: Icon(
-                    Icons.more_vert,
-                    color: Colors.grey.shade600,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          style: const TextStyle(fontSize: 14),
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 1",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 2",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 3",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 4",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 5",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "Parameter 6",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  TextField(
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        const Text(
-          "Message",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        const TextField(
-          minLines: 4,
-          maxLines: 6,
-          style: TextStyle(fontSize: 14),
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        Container(
-          alignment: Alignment.centerRight,
-          width: double.infinity,
-          child: ElevatedButton(
-              onPressed: () => {},
-              style: ElevatedButton.styleFrom(minimumSize: const Size(80, 40)),
-              child: const Text("Save")),
-        )
-      ],
-    ),
-  ));
-}
-
-Widget interactiveMessage() {
-  return Container(
-    height: double.infinity,
-    width: double.infinity,
-    padding: const EdgeInsets.all(defaultPadding),
-    decoration: BoxDecoration(color: Colors.white),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        const Text(
-          "Message Name",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        DropdownButton(
-          style: TextStyle(fontSize: 14),
-          value: dropdownvalue,
-          isExpanded: true,
-          onChanged: (value) {},
-          alignment: AlignmentDirectional.topEnd,
-          items: agents.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
-          }).toList(),
-        ),
-        const SizedBox(
-          height: defaultPadding,
-        ),
-        Container(
-          alignment: Alignment.centerRight,
-          width: double.infinity,
-          child: ElevatedButton(
-              onPressed: () => {},
-              style: ElevatedButton.styleFrom(minimumSize: const Size(80, 40)),
-              child: const Text("Save")),
-        )
-      ],
     ),
   );
 }

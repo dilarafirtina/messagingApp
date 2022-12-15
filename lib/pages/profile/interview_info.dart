@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:flutter/material.dart';
 import 'components/info.dart';
 

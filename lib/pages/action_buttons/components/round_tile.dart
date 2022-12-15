@@ -1,5 +1,6 @@
-import 'package:cht1/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../../utils/configuration.dart';
 
 class ActionTile extends StatelessWidget {
   const ActionTile({
@@ -34,7 +35,7 @@ class ActionTile extends StatelessWidget {
                 width: 40,
                 child: Icon(
                   icon,
-                  color: primaryColor,
+                  color: kPrimaryColor,
                   size: 25,
                 )),
           ),

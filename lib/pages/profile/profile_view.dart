@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:cht1/pages/profile/guest_info.dart';
 import 'package:cht1/pages/profile/hotel_info.dart';
 import 'package:cht1/pages/profile/interview_info.dart';

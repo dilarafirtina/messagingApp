@@ -1,5 +1,5 @@
-import 'package:cht1/constants.dart';
-import 'package:cht1/models/ChatMessage.dart';
+import '../../../utils/configuration.dart';
+import 'package:cht1/models/chat_messages.dart';
 import 'package:flutter/material.dart';
 
 import 'chat_input_field.dart';

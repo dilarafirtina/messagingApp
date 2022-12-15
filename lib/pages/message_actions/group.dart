@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:cht1/pages/message_actions/widgets/list_popup.dart';
 import 'package:flutter/material.dart';
 

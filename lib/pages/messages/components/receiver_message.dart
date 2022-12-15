@@ -1,8 +1,8 @@
-import 'package:cht1/models/ChatMessage.dart';
+import 'package:cht1/models/chat_messages.dart';
 import 'package:cht1/pages/messages/components/message_status.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 import '../../../widgets/custom_shape.dart';
 import "dart:math";
 

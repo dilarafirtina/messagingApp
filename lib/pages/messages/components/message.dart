@@ -1,9 +1,9 @@
-import 'package:cht1/models/ChatMessage.dart';
+import 'package:cht1/models/chat_messages.dart';
 import 'package:cht1/pages/messages/components/media_message.dart';
 import 'package:cht1/pages/messages/components/receiver_message.dart';
 import 'package:cht1/pages/messages/components/sender_message.dart';
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 import 'audio_message.dart';
 
 class Message extends StatelessWidget {
@@ -43,7 +43,7 @@ class Message extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(right: 10),
               child: CircleAvatar(
-                backgroundColor: secondaryColor,
+                backgroundColor: kSecondaryColor,
                 radius: 12,
                 child: Icon(Icons.person, color: Colors.white, size: 20),
               ),

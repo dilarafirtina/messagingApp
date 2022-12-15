@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 
 class Info extends StatelessWidget {
   const Info({

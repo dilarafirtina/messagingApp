@@ -1,13 +1,19 @@
 import 'package:animations/animations.dart';
-import 'package:cht1/models/Chat.dart';
+import 'package:cht1/models/chats.dart';
+import 'package:cht1/models/media_model.dart';
 import 'package:cht1/pages/chats/chat.dart';
+import 'package:cht1/pages/message_actions/widgets/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'widgets/media_slider.dart';
+
 List<Widget> pageList = <Widget>[
-  chatList(queueData),
-  chatList(acceptedData),
-  chatList(resolvedData)
+  mediaSlider(imageList),
+  mediaSlider(videoList),
+  mediaSlider(documentList),
+  chatList(resolvedData),
+  chatList(resolvedData),
 ];
 
 @override
@@ -26,10 +32,15 @@ Widget attachments(BuildContext context) {
             pageIndex.value = index;
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.queue), label: "Queue"),
+            BottomNavigationBarItem(icon: Icon(Icons.photo), label: "Image"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.message), label: "Accepted"),
-            BottomNavigationBarItem(icon: Icon(Icons.check), label: "Resolved"),
+                icon: Icon(Icons.video_file), label: "Video"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.file_present), label: "Document"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.location_pin), label: "Location"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.eight_mp), label: "Sticker"),
           ],
         ),
       ),

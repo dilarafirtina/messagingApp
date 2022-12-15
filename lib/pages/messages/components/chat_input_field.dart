@@ -4,7 +4,8 @@ import 'package:cht1/pages/message_actions/guest_group.dart';
 import 'package:cht1/pages/message_actions/templates.dart';
 import 'package:cht1/widgets/show_dialog.dart';
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
+import '../../message_actions/attachment.dart';
 
 class ChatInputField extends StatelessWidget {
   const ChatInputField({super.key});
@@ -221,8 +222,8 @@ class ChatInputField extends StatelessWidget {
                                       "Add Attachment",
                                       SizedBox(
                                           width: 400,
-                                          height: 100,
-                                          child: Container()));
+                                          height: 400,
+                                          child: attachments(context)));
                                 });
                           })
                         },
@@ -242,7 +243,7 @@ class ChatInputField extends StatelessWidget {
                       ),
                     ],
                     offset: Offset(0, 100),
-                    color: secondaryColor,
+                    color: kSecondaryColor,
                     elevation: 3,
                   ),
                 ),

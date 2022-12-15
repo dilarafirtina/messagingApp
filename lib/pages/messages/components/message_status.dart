@@ -1,5 +1,5 @@
-import 'package:cht1/constants.dart';
-import 'package:cht1/models/ChatMessage.dart';
+import '../../../utils/configuration.dart';
+import 'package:cht1/models/chat_messages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,9 +25,9 @@ class MessageStatusDot extends StatelessWidget {
         margin: EdgeInsets.only(left: 5),
         height: 18,
         width: 18,
-        child: status == MessageStatus.not_sent
-            ? Icon(Icons.check, color: dotColor(status!), size: 16)
-            : SvgPicture.asset("icons/double_check.svg",
-                color: dotColor(status!), width: 10));
+        child: Icon(
+            status == MessageStatus.not_sent ? Icons.check : Icons.done_all,
+            color: dotColor(status!),
+            size: 16));
   }
 }

@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../utils/configuration.dart';
 import 'package:flutter/material.dart';
 
 Widget customAlertDialog(
@@ -12,7 +12,7 @@ Widget customAlertDialog(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
-          color: primaryColor,
+          color: kPrimaryColor,
         ),
         width: double.infinity,
         alignment: Alignment.center,

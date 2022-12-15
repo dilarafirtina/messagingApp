@@ -1,4 +1,4 @@
-import 'package:cht1/constants.dart';
+import '../../utils/configuration.dart';
 import 'package:cht1/pages/action_buttons/actions_menu.dart';
 import 'package:cht1/widgets/show_dialog.dart';
 import 'package:flutter/material.dart';
