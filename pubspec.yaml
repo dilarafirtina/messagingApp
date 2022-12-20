@@ -53,8 +53,6 @@ dependencies:
   form_builder_extra_fields: ^8.3.0
   form_builder_validators: ^8.4.0
   carousel_slider: ^4.2.1
-  video_thumbnail: ^0.5.3
-  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'package:cht1/utils/configuration.dart';
 import 'package:flutter/material.dart';
 
 Widget defaultButton({
@@ -14,7 +15,7 @@ Widget defaultButton({
           foregroundColor: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          backgroundColor: Colors.black,
+          backgroundColor: kPrimaryColor,
         ),
         onPressed: press as void Function()?,
         child: Text(

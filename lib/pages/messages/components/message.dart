@@ -1,9 +1,13 @@
-import 'package:cht1/models/chat_messages.dart';
+import 'package:cht1/models/chat_messages_model.dart';
+import 'package:cht1/pages/messages/components/location_message.dart';
 import 'package:cht1/pages/messages/components/media_message.dart';
-import 'package:cht1/pages/messages/components/receiver_message.dart';
-import 'package:cht1/pages/messages/components/sender_message.dart';
+import 'package:cht1/pages/messages/components/receiver_message_container.dart';
+import 'package:cht1/pages/messages/components/sender_message_container.dart';
+import 'package:cht1/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
+import '../../../widgets/widgets.dart';
 import 'audio_message.dart';
 
 class Message extends StatelessWidget {
@@ -16,38 +20,26 @@ class Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget messageContaint(ChatMessage message) {
-      switch (message.messageType) {
-        case ChatMessageType.text:
-          return message.isSender
-              ? senderTextMessage(context, message)
-              : receiverTextMessage(context, message);
-        case ChatMessageType.audio:
-          return audioMessage(context, message);
-        case ChatMessageType.image:
-          return mediaMessage(context, message);
-        default:
-          return const SizedBox();
-      }
-    }
-
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: Get.size.width,
       padding:
           const EdgeInsets.only(top: defaultPadding, bottom: defaultPadding),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment:
             message.isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           if (!message.isSender) ...[
-            const Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: CircleAvatar(
-                backgroundColor: kSecondaryColor,
-                radius: 12,
-                child: Icon(Icons.person, color: Colors.white, size: 20),
-              ),
-            ),
+            message.avatar!.isEmpty
+                ? const Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: CircleAvatar(
+                        backgroundColor: kSecondaryColor,
+                        radius: 12,
+                        child:
+                            Icon(Icons.person, color: Colors.white, size: 20)),
+                  )
+                : circleAvatar(message.avatar!)
           ],
           Flexible(
             child: Container(
@@ -57,7 +49,9 @@ class Message extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  messageContaint(message),
+                  message.isSender
+                      ? senderTextMessage(message, messageContaint(message))
+                      : receiverTextMessage(message, messageContaint(message)),
                 ],
               ),
             ),
@@ -65,5 +59,20 @@ class Message extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+Widget messageContaint(ChatMessage message) {
+  switch (message.messageType) {
+    case ChatMessageType.text:
+      return Text(message.text ?? "");
+    case ChatMessageType.audio:
+      return audioMessage(message);
+    case ChatMessageType.image:
+      return mediaMessage(message);
+    case ChatMessageType.location:
+      return locationMessage(message, () {});
+    default:
+      return const SizedBox();
   }
 }

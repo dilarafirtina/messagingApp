@@ -1,31 +1,31 @@
-import 'package:cht1/models/chat_messages.dart';
+import 'package:cht1/models/chat_messages_model.dart';
 import 'package:cht1/pages/messages/components/message_status.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
 import '../../../widgets/custom_shape.dart';
 import "dart:math";
 
 @override
-Widget senderTextMessage(BuildContext context, ChatMessage message) {
+Widget senderTextMessage(ChatMessage message, Widget child) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.end,
     children: <Widget>[
       Flexible(
           child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Flexible(
             child: Container(
-              constraints: BoxConstraints(
-                  maxWidth: MediaQuery.of(context).size.width / 4),
+              constraints: BoxConstraints(maxWidth: Get.size.width / 4),
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 color: textBoxMe,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(18),
                   bottomLeft: Radius.circular(18),
-                  bottomRight: Radius.circular(18),
+                  topRight: Radius.circular(18),
                 ),
               ),
               child: Column(
@@ -33,10 +33,7 @@ Widget senderTextMessage(BuildContext context, ChatMessage message) {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(message.text,
-                      textAlign: TextAlign.start,
-                      style:
-                          const TextStyle(color: Colors.black87, fontSize: 14)),
+                  child,
                   Container(
                     width: 90,
                     padding: const EdgeInsets.only(top: 5),
@@ -56,7 +53,13 @@ Widget senderTextMessage(BuildContext context, ChatMessage message) {
               ),
             ),
           ),
-          CustomPaint(painter: CustomShape(textBoxMe)),
+          Transform(
+            alignment: Alignment.center,
+            transform: Matrix4.rotationX(pi),
+            child: CustomPaint(
+              painter: CustomShape(textBoxMe),
+            ),
+          ),
         ],
       ))
     ],

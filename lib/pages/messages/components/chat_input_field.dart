@@ -1,11 +1,11 @@
-import 'package:cht1/pages/message_actions/chat_note.dart';
-import 'package:cht1/pages/message_actions/group.dart';
-import 'package:cht1/pages/message_actions/guest_group.dart';
-import 'package:cht1/pages/message_actions/templates.dart';
+import 'package:cht1/pages/message_actions/chat_note_view.dart';
+import 'package:cht1/pages/message_actions/group_view.dart';
+import 'package:cht1/pages/message_actions/guest_group_view.dart';
 import 'package:cht1/widgets/show_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
-import '../../message_actions/attachment.dart';
+import '../../message_actions/message_attachment_view.dart';
 
 class ChatInputField extends StatelessWidget {
   const ChatInputField({super.key});
@@ -175,42 +175,42 @@ class ChatInputField extends StatelessWidget {
                           ],
                         ),
                       ),
-                      PopupMenuItem(
-                        value: 4,
-                        onTap: () => {
-                          WidgetsBinding.instance.addPostFrameCallback((_) {
-                            showDialog<void>(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return customAlertDialog(
-                                      context,
-                                      "Add Messages",
-                                      SizedBox(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                              1.6,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              1.6,
-                                          child: templates(context)));
-                                });
-                          })
-                        },
-                        child: Row(
-                          children: const [
-                            Icon(Icons.message, color: Colors.white),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Add Messages",
-                              style: TextStyle(color: Colors.white),
-                            )
-                          ],
-                        ),
-                      ),
+                      // PopupMenuItem(
+                      //   value: 4,
+                      //   onTap: () => {
+                      //     WidgetsBinding.instance.addPostFrameCallback((_) {
+                      //       showDialog<void>(
+                      //           context: context,
+                      //           builder: (BuildContext context) {
+                      //             return customAlertDialog(
+                      //                 context,
+                      //                 "Add Messages",
+                      //                 SizedBox(
+                      //                     height: MediaQuery.of(context)
+                      //                             .size
+                      //                             .height /
+                      //                         1.6,
+                      //                     width: MediaQuery.of(context)
+                      //                             .size
+                      //                             .width /
+                      //                         1.6,
+                      //                     child: templates(context)));
+                      //           });
+                      //     })
+                      //   },
+                      //   child: Row(
+                      //     children: const [
+                      //       Icon(Icons.message, color: Colors.white),
+                      //       SizedBox(
+                      //         width: 10,
+                      //       ),
+                      //       Text(
+                      //         "Add Messages",
+                      //         style: TextStyle(color: Colors.white),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
                       PopupMenuItem(
                         onTap: () => {
                           WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -221,8 +221,8 @@ class ChatInputField extends StatelessWidget {
                                       context,
                                       "Add Attachment",
                                       SizedBox(
-                                          width: 400,
-                                          height: 400,
+                                          width: 600,
+                                          height: Get.size.height - 100,
                                           child: attachments(context)));
                                 });
                           })

@@ -6,6 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../services/storage_service.dart';
 import '../theme/Themes.dart';
 import '../utils/configuration.dart';
+import 'networkimage_widget.dart';
 
 Widget header(String header) {
   return Text(header.tr,
@@ -285,5 +286,23 @@ getBottomSheet(BuildContext context, Widget child) {
             child: child),
       ]);
     },
+  );
+}
+
+circleAvatar(String imageUrl) {
+  return Container(
+    margin: const EdgeInsets.only(
+      bottom: 8,
+    ),
+    decoration: const BoxDecoration(
+      color: Colors.white,
+      shape: BoxShape.circle,
+    ),
+    width: 30,
+    height: 30,
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(500.0),
+      child: cachedNetworkImage(imageUrl ?? "", BoxFit.fitHeight, 'product'),
+    ),
   );
 }

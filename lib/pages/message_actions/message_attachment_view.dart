@@ -1,19 +1,19 @@
 import 'package:animations/animations.dart';
-import 'package:cht1/models/chats.dart';
 import 'package:cht1/models/media_model.dart';
-import 'package:cht1/pages/chats/chat.dart';
-import 'package:cht1/pages/message_actions/widgets/test.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'widgets/location.dart';
+import 'widgets/message_types.dart';
 import 'widgets/media_slider.dart';
 
 List<Widget> pageList = <Widget>[
+  templateMessage(),
   mediaSlider(imageList),
   mediaSlider(videoList),
   mediaSlider(documentList),
-  chatList(resolvedData),
-  chatList(resolvedData),
+  locations(() {}),
+  mediaSlider(stickerList),
 ];
 
 @override
@@ -32,6 +32,8 @@ Widget attachments(BuildContext context) {
             pageIndex.value = index;
           },
           items: const [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.comment_bank), label: "Messages"),
             BottomNavigationBarItem(icon: Icon(Icons.photo), label: "Image"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.video_file), label: "Video"),

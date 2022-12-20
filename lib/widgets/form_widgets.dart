@@ -124,7 +124,6 @@ Widget formInputArea(String field, {IconData? suffixIcon, int? maxLines}) {
           name: field,
           maxLines: maxLines ?? 5,
           decoration: const InputDecoration(
-
               //labelText: "label".tr,
               //suffixIcon: IconButton(onPressed Icons.cancel),
               //suffixIconColor: kPrimaryColor, //Icons.check

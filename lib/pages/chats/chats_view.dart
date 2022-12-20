@@ -1,5 +1,5 @@
 import 'package:animations/animations.dart';
-import 'package:cht1/models/chats.dart';
+import 'package:cht1/models/chats_model.dart';
 import 'package:cht1/pages/chats/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

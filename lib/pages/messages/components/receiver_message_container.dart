@@ -1,38 +1,36 @@
-import 'package:cht1/models/chat_messages.dart';
-import 'package:cht1/pages/messages/components/message_status.dart';
+import 'package:cht1/models/chat_messages_model.dart';
 import 'package:flutter/material.dart';
-
-import '../../../utils/configuration.dart';
+import 'package:get/get.dart';
 import '../../../widgets/custom_shape.dart';
 import "dart:math";
 
 @override
-Widget receiverTextMessage(BuildContext context, ChatMessage message) {
+Widget receiverTextMessage(ChatMessage message, Widget child) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.end,
+    crossAxisAlignment: CrossAxisAlignment.end,
     children: <Widget>[
       Flexible(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Transform(
               alignment: Alignment.center,
-              transform: Matrix4.rotationY(pi),
+              transform: Matrix4.rotationX(pi),
               child: CustomPaint(
                 painter: CustomShape(Colors.white),
               ),
             ),
             Flexible(
               child: Container(
-                constraints: BoxConstraints(
-                    maxWidth: MediaQuery.of(context).size.width / 4),
+                constraints: BoxConstraints(maxWidth: Get.size.width / 4),
                 padding: const EdgeInsets.all(14),
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(18),
-                    bottomLeft: Radius.circular(18),
+                    topLeft: Radius.circular(18),
                     bottomRight: Radius.circular(18),
                   ),
                 ),
@@ -41,10 +39,7 @@ Widget receiverTextMessage(BuildContext context, ChatMessage message) {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(message.text,
-                        textAlign: TextAlign.start,
-                        style: const TextStyle(
-                            color: Colors.black87, fontSize: 14)),
+                    child,
                     Container(
                       width: 40,
                       padding: const EdgeInsets.only(top: 5),

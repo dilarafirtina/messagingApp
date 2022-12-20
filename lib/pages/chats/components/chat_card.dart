@@ -1,4 +1,4 @@
-import 'package:cht1/models/chats.dart';
+import 'package:cht1/models/chats_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/circle_avatar_with_active_indicator.dart';
@@ -54,6 +54,9 @@ class ChatCard extends StatelessWidget {
                   children: [
                     Text(
                       chat.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
@@ -62,18 +65,33 @@ class ChatCard extends StatelessWidget {
                       opacity: 0.64,
                       child: Text(
                         chat.lastMessage,
-                        maxLines: 1,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
+                        softWrap: false,
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            Opacity(
-              opacity: 0.64,
-              child: Text(chat.time),
-            ),
+            Column(
+              children: [
+                Opacity(
+                  opacity: 0.64,
+                  child: Text(chat.time),
+                ),
+                if (!chat.isActive)
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                        color: textBoxMe, shape: BoxShape.circle),
+                    child: const Opacity(
+                      opacity: 0.64,
+                      child: Text("2"),
+                    ),
+                  )
+              ],
+            )
           ],
         ),
       ),
