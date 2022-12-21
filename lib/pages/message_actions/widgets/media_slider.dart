@@ -58,12 +58,12 @@ Widget mediaSlider(List items) {
       ],
     ),
     const SizedBox(height: 10),
-    SizedBox(
-      height: 550,
+    Expanded(
+      //height: 550,
       child: GridView.builder(
         scrollDirection: Axis.horizontal,
         gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
         itemCount: items.length,
         itemBuilder: (context, index) => InkWell(
             onTap: () {
@@ -111,8 +111,10 @@ Widget createSliderItems(Media item) {
           SizedBox(
             height: double.infinity,
             width: 400,
-            child: cachedNetworkImage(
-                item.url ?? "", BoxFit.fill, item.id.toString()),
+            child: item.type == "document"
+                ? Icon(Icons.description, size: 80)
+                : cachedNetworkImage(
+                    item.url ?? "", BoxFit.fill, item.id.toString()),
           ),
           Positioned(
             bottom: 0.0,

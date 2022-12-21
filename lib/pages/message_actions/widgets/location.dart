@@ -57,13 +57,14 @@ Widget locations(Function onTap) {
         ),
       ],
     ),
-    ListView.builder(
-      itemCount: locationList.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) =>
-          locationListTile(locationList[index], onTap),
-    )
+    Expanded(
+      child: ListView.builder(
+        itemCount: locationList.length,
+        shrinkWrap: true,
+        itemBuilder: (context, index) =>
+            locationListTile(locationList[index], onTap),
+      ),
+    ),
   ]);
 }
 

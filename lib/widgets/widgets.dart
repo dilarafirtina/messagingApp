@@ -1,9 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../services/storage_service.dart';
 import '../theme/Themes.dart';
 import '../utils/configuration.dart';
 import 'networkimage_widget.dart';
@@ -305,4 +305,9 @@ circleAvatar(String imageUrl) {
       child: cachedNetworkImage(imageUrl ?? "", BoxFit.fitHeight, 'product'),
     ),
   );
+}
+
+playSound(url) {
+  final audioPlayer = AudioPlayer();
+  audioPlayer.play(UrlSource(url));
 }

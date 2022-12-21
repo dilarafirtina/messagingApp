@@ -7,18 +7,17 @@ import 'widgets/location.dart';
 import 'widgets/message_types.dart';
 import 'widgets/media_slider.dart';
 
-List<Widget> pageList = <Widget>[
-  templateMessage(),
-  mediaSlider(imageList),
-  mediaSlider(videoList),
-  mediaSlider(documentList),
-  locations(() {}),
-  mediaSlider(stickerList),
-];
-
 @override
 Widget attachments(BuildContext context) {
   RxInt pageIndex = 0.obs;
+  List<Widget> pageList = <Widget>[
+    templateMessage(context),
+    mediaSlider(imageList),
+    mediaSlider(videoList),
+    mediaSlider(documentList),
+    locations(() {}),
+    mediaSlider(stickerList),
+  ];
 
   return Scaffold(
     appBar: AppBar(

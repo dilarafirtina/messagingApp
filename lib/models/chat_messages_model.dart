@@ -91,6 +91,7 @@ List demeChatMessages = [
       date: "01.11.2022",
       time: "13.07"),
   ChatMessage(
+      text: "Lorem ipsum dolor",
       avatar:
           "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       url: "https://yasmak.opex.app/images/splash1.jpg",
@@ -103,7 +104,7 @@ List demeChatMessages = [
       avatar:
           "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
       text: "",
-      url: "https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg",
+      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
       messageType: ChatMessageType.audio,
       messageStatus: MessageStatus.viewed,
       isSender: true,
@@ -112,6 +113,7 @@ List demeChatMessages = [
   ChatMessage(
       avatar:
           "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
+      text: "Document1.pdf",
       url:
           "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       messageType: ChatMessageType.document,
@@ -121,7 +123,7 @@ List demeChatMessages = [
       time: "13.15"),
   ChatMessage(
       avatar: "",
-      text: "",
+      text: "Document2.pdf",
       url:
           "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
       messageType: ChatMessageType.document,
@@ -132,8 +134,8 @@ List demeChatMessages = [
   ChatMessage(
       avatar:
           "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
-      url:
-          "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      text: "Hotel 1",
+      url: "https://goo.gl/maps/LEJa9Zowv3HVJRZ98",
       messageType: ChatMessageType.location,
       messageStatus: MessageStatus.viewed,
       isSender: false,
@@ -141,9 +143,8 @@ List demeChatMessages = [
       time: "13.15"),
   ChatMessage(
       avatar: "",
-      text: "",
-      url:
-          "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      text: "Location 1",
+      url: "https://goo.gl/maps/LEJa9Zowv3HVJRZ98",
       messageType: ChatMessageType.location,
       messageStatus: MessageStatus.viewed,
       isSender: true,
@@ -152,8 +153,7 @@ List demeChatMessages = [
   ChatMessage(
       avatar:
           "https://t3.ftcdn.net/jpg/03/67/46/48/360_F_367464887_f0w1JrL8PddfuH3P2jSPlIGjKU2BI0rn.jpg",
-      url:
-          "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      url: "https://cdn-icons-png.flaticon.com/512/4383/4383914.png",
       messageType: ChatMessageType.sticker,
       messageStatus: MessageStatus.viewed,
       isSender: false,
@@ -162,8 +162,7 @@ List demeChatMessages = [
   ChatMessage(
       avatar: "",
       text: "",
-      url:
-          "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      url: "https://cdn-icons-png.flaticon.com/512/4383/4383823.png",
       messageType: ChatMessageType.sticker,
       messageStatus: MessageStatus.viewed,
       isSender: true,

@@ -1,5 +1,4 @@
 import 'package:cht1/models/template_message.dart';
-import 'package:cht1/utils/utils.dart';
 import 'package:cht1/widgets/default_button.dart';
 import 'package:cht1/widgets/widgets.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -7,11 +6,10 @@ import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/form_widgets.dart';
+import '../../../widgets/show_dialog.dart';
 import 'template_message_list.dart';
 
-Widget templateMessage() {
-  var selected = "".obs;
-  var dropdownvalue = 'TR'.obs;
+Widget templateMessage(BuildContext context) {
   final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,177 +93,189 @@ Widget templateMessage() {
       const SizedBox(
         height: defaultPadding,
       ),
-      SizedBox(
-        height: 200,
+      Expanded(
         child: ListView.builder(
+          shrinkWrap: true,
           itemCount: templatesList.length,
-          // shrinkWrap: true,
-          // physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) =>
               templateList(templatesList[index], () {
-            selected.value = templatesList[index].body;
-
-            formKey.currentState!.fields['message']!.didChange(selected.value);
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              showDialog<void>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return customAlertDialog(
+                      context,
+                      "Send Message",
+                      SizedBox(
+                        width: 450,
+                        height: 450,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                          child: SingleChildScrollView(
+                            child: FormBuilder(
+                              key: formKey,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  formLabel(
+                                    "Message",
+                                  ),
+                                  FormBuilderTextField(
+                                    initialValue: templatesList[index].body,
+                                    name: "message",
+                                    maxLines: 5,
+                                  ),
+                                  formLabel(
+                                    "Parameter Header",
+                                  ),
+                                  formInput(
+                                    "header",
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            formLabel(
+                                              "Parameter 1",
+                                            ),
+                                            formInput(
+                                              "parameter1",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            formLabel(
+                                              "Parameter 2",
+                                            ),
+                                            formInput(
+                                              "parameter2",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            formLabel(
+                                              "Parameter 3",
+                                            ),
+                                            formInput(
+                                              "parameter3",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Column(children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              formLabel(
+                                                "Parameter 4",
+                                              ),
+                                              formInput(
+                                                "parameter4",
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              formLabel(
+                                                "Parameter 5",
+                                              ),
+                                              formInput(
+                                                "parameter5",
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              formLabel(
+                                                "Parameter 6",
+                                              ),
+                                              formInput(
+                                                "parameter6",
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        const Expanded(
+                                          child: SizedBox(),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        const Expanded(
+                                          child: SizedBox(),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        Expanded(
+                                            child: defaultButton(text: "Save")),
+                                      ],
+                                    ),
+                                  ]),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  });
+            });
           }),
         ),
       ),
       const SizedBox(
         height: defaultPadding,
-      ),
-      Obx(
-        () => selected.value.isNotEmpty
-            ? Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: SingleChildScrollView(
-                    child: FormBuilder(
-                      key: formKey,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          formLabel(
-                            "Message",
-                          ),
-                          formInputArea(
-                            "message",
-                          ),
-                          formLabel(
-                            "Parameter Header",
-                          ),
-                          formInput(
-                            "header",
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    formLabel(
-                                      "Parameter 1",
-                                    ),
-                                    formInput(
-                                      "parameter1",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    formLabel(
-                                      "Parameter 2",
-                                    ),
-                                    formInput(
-                                      "parameter2",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    formLabel(
-                                      "Parameter 3",
-                                    ),
-                                    formInput(
-                                      "parameter3",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      formLabel(
-                                        "Parameter 4",
-                                      ),
-                                      formInput(
-                                        "parameter4",
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      formLabel(
-                                        "Parameter 5",
-                                      ),
-                                      formInput(
-                                        "parameter5",
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      formLabel(
-                                        "Parameter 6",
-                                      ),
-                                      formInput(
-                                        "parameter6",
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                const Expanded(
-                                  child: SizedBox(),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Expanded(child: defaultButton(text: "Save")),
-                              ],
-                            ),
-                          ]),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              )
-            : Container(),
       ),
     ],
   );

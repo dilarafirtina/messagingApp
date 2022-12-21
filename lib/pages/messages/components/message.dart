@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
 import '../../../widgets/widgets.dart';
 import 'audio_message.dart';
+import 'document_message.dart';
+import 'sticker_message.dart';
 
 class Message extends StatelessWidget {
   const Message({
@@ -71,7 +73,11 @@ Widget messageContaint(ChatMessage message) {
     case ChatMessageType.image:
       return mediaMessage(message);
     case ChatMessageType.location:
-      return locationMessage(message, () {});
+      return locationMessage(message);
+    case ChatMessageType.document:
+      return documentMessage(message);
+    case ChatMessageType.sticker:
+      return stickerMessage(message);
     default:
       return const SizedBox();
   }

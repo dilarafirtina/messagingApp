@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height,
-                        child: const ProfileView()),
+                        child: ProfileView()),
                   ),
                 ],
               ),

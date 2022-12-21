@@ -80,6 +80,8 @@ class SizeConfig {
 }
 
 const double maxWidth = 480.0;
+//TODO
+String currentUser = "Dilara Fırtına";
 
 class AppDefaults {
   static const double radius = 15;

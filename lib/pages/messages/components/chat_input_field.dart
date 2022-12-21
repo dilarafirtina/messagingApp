@@ -175,42 +175,6 @@ class ChatInputField extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // PopupMenuItem(
-                      //   value: 4,
-                      //   onTap: () => {
-                      //     WidgetsBinding.instance.addPostFrameCallback((_) {
-                      //       showDialog<void>(
-                      //           context: context,
-                      //           builder: (BuildContext context) {
-                      //             return customAlertDialog(
-                      //                 context,
-                      //                 "Add Messages",
-                      //                 SizedBox(
-                      //                     height: MediaQuery.of(context)
-                      //                             .size
-                      //                             .height /
-                      //                         1.6,
-                      //                     width: MediaQuery.of(context)
-                      //                             .size
-                      //                             .width /
-                      //                         1.6,
-                      //                     child: templates(context)));
-                      //           });
-                      //     })
-                      //   },
-                      //   child: Row(
-                      //     children: const [
-                      //       Icon(Icons.message, color: Colors.white),
-                      //       SizedBox(
-                      //         width: 10,
-                      //       ),
-                      //       Text(
-                      //         "Add Messages",
-                      //         style: TextStyle(color: Colors.white),
-                      //       )
-                      //     ],
-                      //   ),
-                      // ),
                       PopupMenuItem(
                         onTap: () => {
                           WidgetsBinding.instance.addPostFrameCallback((_) {

@@ -1,5 +1,6 @@
 import 'package:cht1/models/chat_messages_model.dart';
 import 'package:cht1/pages/messages/components/message_status.dart';
+import 'package:cht1/theme/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/configuration.dart';
@@ -33,9 +34,65 @@ Widget senderTextMessage(ChatMessage message, Widget child) {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(currentUser,
+                          style: const TextStyle(fontWeight: FontWeight.w600)),
+                      PopupMenuButton<int>(
+                        tooltip: "Message Actions",
+                        icon: Icon(
+                          size: 25,
+                          Icons.expand_more,
+                          color: Colors.grey.shade600,
+                        ),
+                        itemBuilder: (context) => [
+                          PopupMenuItem(
+                            value: 1,
+                            onTap: () => {},
+                            child: Row(
+                              children: const [
+                                Icon(Icons.note, color: Colors.white),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Add Notes",
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                          PopupMenuItem(
+                            value: 2,
+                            onTap: () => {},
+                            child: Row(
+                              children: const [
+                                Icon(Icons.people, color: Colors.white),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Reply",
+                                  style: TextStyle(color: Colors.white),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                        offset: Offset(0, 40),
+                        color: kSecondaryColor,
+                        elevation: 3,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   child,
                   Container(
-                    width: 90,
+                    //width: 90,
+                    constraints: BoxConstraints(maxWidth: 50),
                     padding: const EdgeInsets.only(top: 5),
                     alignment: Alignment.bottomRight,
                     child: Row(

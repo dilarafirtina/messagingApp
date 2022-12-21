@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SvgPicture.asset('icons/logo.svg'),
+        child: SvgPicture.asset('images/opex.png'),
       ),
     );
   }

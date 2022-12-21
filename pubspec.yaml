@@ -53,6 +53,9 @@ dependencies:
   form_builder_extra_fields: ^8.3.0
   form_builder_validators: ^8.4.0
   carousel_slider: ^4.2.1
+  audioplayers: ^1.1.1
+  mime: ^1.0.3
+  font_awesome_flutter: ^10.3.0
 
 dev_dependencies:
   flutter_test:
